@@ -3,6 +3,8 @@ The Solar Calculator web application enables users to estimate the Nominal Power
 
 Users can search for an address on a map, draw a solar installation on the map and calculate the Nominal Power of the drawn solar installation.
 
+Live Demo: https://daveboivin.com/solar-calculator/
+
 ### Setup and run the application
   - install a recent version of node.js on your computer
     - you will use this for building, bundling and hosting the web app
