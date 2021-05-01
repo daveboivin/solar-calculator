@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Solar Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.2/mapbox-gl-draw.css" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" rel="stylesheet">
+    <link href="app.css" rel="stylesheet">
+    <script defer src="bundled-app.js"></script>
+  </head>
+  <body>
+    <div class="map">
+      <div id="map"></div>
+    </div>
+    <div class="calculations">
+      <h1>Solar Calculator</h1>
+      <p>Draw a polygon using the map's draw tools. Double-click when you draw the final vertex to complete the polygon.</p>
+      <p>Use the search box to find an address</p>
+      <h2>Calculation Assumptions</h2>
+      <p>Nominal Power = amount of solar panels * Maximum power of each solar panel</p>
+      <p>Solar Panel Maximum Power at STC: 250W</p>
+      <p>Solar Panel Size: 1 meter x 2 meter</p>
+      <h2>Calculation</h2>
+      <p>Area of drawn polygon: <span id="area"></span></p>
+      <p>Estimated number of solar panels fit in this area: <span id="solar-panels"></span></p>
+      <p>Nominal Power: <span id="nominal-power"></span></p>
+    </div>
+  </body>
+</html>
