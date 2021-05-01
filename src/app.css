@@ -5,7 +5,7 @@
 .map {
     float:left;
     display:inline;
-    width: 50%;
+    width: 49%;
 }
 
 .calculations {
@@ -34,7 +34,6 @@
 }
 
 p {
-    font-family: 'Open Sans';
     margin: 0;
     font-size: 16px;
 }

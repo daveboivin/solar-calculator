@@ -16,15 +16,19 @@
     </div>
     <div class="calculations">
       <h1>Solar Calculator</h1>
-      <p>Draw a polygon using the map's draw tools. Double-click when you draw the final vertex to complete the polygon.</p>
       <p>Use the search box to find an address</p>
-      <h2>Calculation Assumptions</h2>
+      <p>Draw a polygon using the map's draw tools. Double-click when you draw the final vertex to complete the polygon.</p>
+      <p>The calculation will appear below</p>
+      <h2>Formula</h2>
       <p>Nominal Power = amount of solar panels * Maximum power of each solar panel</p>
+      <p>Nominal Power = (AreaPolygon / AreaSolarPanel) * MaxPowerOfSolarPanel</p>
       <p>Solar Panel Maximum Power at STC: 250W</p>
       <p>Solar Panel Size: 1 meter x 2 meter</p>
       <h2>Calculation</h2>
-      <p>Area of drawn polygon: <span id="area"></span></p>
-      <p>Estimated number of solar panels fit in this area: <span id="solar-panels"></span></p>
+      <p>MaxPowerOfSolarPanel: 250W</p>
+      <p>AreaSolarPanel: 2 square meters</p>
+      <p>AreaPolygon (calculated using turf.js): <span id="area"></span></p>
+      <p>Estimated number of solar panels fit in this area (AreaPolygon / AreaSolarPanel): <span id="solar-panels"></span></p>
       <p>Nominal Power: <span id="nominal-power"></span></p>
     </div>
   </body>
