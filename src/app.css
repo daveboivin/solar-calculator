@@ -2,12 +2,6 @@
     box-sizing: border-box;
 }
 
-.map {
-    float:left;
-    display:inline;
-    width: 49%;
-}
-
 .calculations {
     float:right;
     display:inline;
@@ -15,6 +9,8 @@
 }
 
 #map {
+    float:left;
+    display:inline;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -29,4 +25,18 @@ p {
 
 span {
     font-weight: bold;
+}
+
+@media only screen and (max-width: 900px) {
+    /* For mobile phones: */
+    #map {
+        width: 100%;
+        height: 50%;
+    }
+
+    .calculations {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+    }
 }
