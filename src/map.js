@@ -1,7 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-import turfArea from '@turf/area';
+import solarCalculator from './solar-calculator'
 
 const TOKEN = 'pk.eyJ1IjoiZGF2aWQtYiIsImEiOiJja28wZWt6M2YwY3d5MnBvaWs2c3gyejFrIn0.QESsL61dLc3e-AIfKi6k8w';
 const PAGE_MAP_ID = 'map';
@@ -48,25 +48,17 @@ if (mapDiv.style.visibility === true) {
 // calculates area of the drawn polygon then determines the total solar panels and nominal power for the given area
 // updates the html elements with calculations
 function updateArea(e) {
-    const AREA_SOLAR_PANEL = 2;
-    const MAX_POWER_OF_SOLAR_PANEL = 250;
-
-    var data = draw.getAll();
+    var geoJsondata = draw.getAll();
     var areaHtml = document.getElementById('area');
     var solarPanelsHtml = document.getElementById('solar-panels');
     var nominalPowerHtml = document.getElementById('nominal-power');
 
-    if (data.features.length > 0) {
-        var area = turfArea(data);
-        // restrict area to 2 decimal points
-        var roundedArea = Math.round(area * 100) / 100;
-        areaHtml.innerHTML = roundedArea + ' square meters';
+    if (geoJsondata.features.length > 0) {
+        var solarData = solarCalculator(geoJsondata);
 
-        var totalPanels = Math.round(roundedArea / AREA_SOLAR_PANEL);
-        solarPanelsHtml.innerHTML = totalPanels.toString();
-
-        var nominalPower = totalPanels * MAX_POWER_OF_SOLAR_PANEL;
-        nominalPowerHtml.innerHTML = nominalPower + ' W';
+        areaHtml.innerHTML = solarData.roundedArea + ' square meters';
+        solarPanelsHtml.innerHTML = solarData.totalPanels.toString();
+        nominalPowerHtml.innerHTML = solarData.nominalPower + ' W';
     } else {
         areaHtml.innerHTML = '';
         solarPanelsHtml.innerHTML = '';
