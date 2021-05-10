@@ -34,7 +34,7 @@ Live Demo: https://daveboivin.com/solar-calculator/
   - Refine calculation of total amount of solar panels for a given area to work for area of a polygon. My calculation assumes area is a rectangle.
   - Review and refine measurement for Nominal Power as I make several (probably incorrect) assumptions
 
-### Next steps (if time wasn't an issue)
+### Next steps
   - Utilize real solar data to refine the measurement beyond Standard Test Conditions
     - https://developer.nrel.gov/docs/solar/solar-resource-v1/
   - ** implement this equation **
@@ -43,4 +43,3 @@ Live Demo: https://daveboivin.com/solar-calculator/
 ### Other sources used
   - https://en.wikipedia.org/wiki/Nominal_power_(photovoltaic)
   - https://photovoltaic-software.com/principle-ressources/how-calculate-solar-energy-power-pv-systems
-  - https://mapdwell.com/en/solar/boulder/assumptions
